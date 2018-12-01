@@ -6,8 +6,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.bwie.sunli20181130.R;
-
 public class WeekHotLayout extends LinearLayout {
 
     private int mChildMaxHeight;

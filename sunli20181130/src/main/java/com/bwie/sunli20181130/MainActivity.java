@@ -7,8 +7,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.bwie.sunli20181130.weektest.TitleBarView;
 import com.bwie.sunli20181130.weektest.WeekFlowLayout;
 import com.bwie.sunli20181130.weektest.WeekHotLayout;
+
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,19 +27,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        final EditText editText = findViewById(R.id.et);
         final WeekFlowLayout fl = findViewById(R.id.fl);
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+
+        TitleBarView titleBar = findViewById(R.id.titleBar);
+        titleBar.setmOnButtonClickListener(new TitleBarView.OnButtonClickListener() {
             @Override
-            public void onClick(View v) {
-                TextView tv = new TextView(MainActivity.this);
-                tv.setText(editText.getText());
-                tv.setTextSize(18);
-                tv.setTextColor(Color.GRAY);
-                tv.setBackgroundResource(R.drawable.edit_bg);
-                fl.addView(tv);
+            public void onButtonClick(String str) {
+                UUID uuid = UUID.randomUUID();
+                TextView text_title = new TextView(MainActivity.this);
+                text_title.setTag(uuid);
+                text_title.setTextColor(Color.GRAY);
+                text_title.setText(str);
+                text_title.setBackgroundResource(R.drawable.edit_bg);
+                fl.addView(text_title);
+
+                text_title.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String uuid = String.valueOf(v.getTag());
+                    }
+                });
             }
         });
+
         final WeekHotLayout hl = findViewById(R.id.hl);
         for (int i = 0; i < hot.length; i++) {
             TextView tv1 = new TextView(MainActivity.this);
@@ -47,3 +60,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
+
+
+
+
+    /*final EditText editText = findViewById(R.id.et);
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView tv = new TextView(MainActivity.this);
+                tv.setText(editText.getText());
+                tv.setTextSize(18);
+                tv.setTextColor(Color.GRAY);
+                tv.setBackgroundResource(R.drawable.edit_bg);
+                fl.addView(tv);
+            }
+        });*/
