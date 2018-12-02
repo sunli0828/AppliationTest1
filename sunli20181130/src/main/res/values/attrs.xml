@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CustomBallView">
-        <attr name="ball_size" format="integer"></attr>
+    <declare-styleable name="CustomWeekFlowView">
+        <!-- name为属性的名字，可以随意起，只要符合规则看得懂 -->
+        <!-- format为属性内容的类型 -->
+        <attr name="textcolor" format="color"></attr>
     </declare-styleable>
 </resources>

@@ -6,23 +6,38 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-   <com.bwie.sunli20181130.weektest.TitleBarView
+   <com.bwie.sunli20181130.week_test.CustomTitleBarView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/titleBar"
-        ></com.bwie.sunli20181130.weektest.TitleBarView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="搜索历史"
-        android:textSize="24sp"
-        android:layout_marginTop="20dp"
-        />
-    <com.bwie.sunli20181130.weektest.WeekFlowLayout
+        ></com.bwie.sunli20181130.week_test.CustomTitleBarView>
+   <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+       android:orientation="horizontal"
+       >
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="搜索历史"
+            android:textSize="24sp"
+            android:layout_marginLeft="10dp"
+            />
+       <TextView
+           android:layout_width="100dp"
+           android:layout_height="match_parent"
+           android:text="清空历史"
+           android:textSize="24sp"
+           android:layout_marginLeft="160dp"
+           android:id="@+id/edit_delall"
+           android:layout_marginRight="10dp"
+           />
+    </LinearLayout>
+    <com.bwie.sunli20181130.week_test.CustomWeekFlowView
         android:id="@+id/fl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        ></com.bwie.sunli20181130.week_test.CustomWeekFlowView>
 
     <TextView
         android:layout_width="match_parent"
@@ -30,11 +45,13 @@
         android:text="热门搜索"
         android:textSize="24sp"
         android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
         />
 
-    <com.bwie.sunli20181130.weektest.WeekHotLayout
+    <com.bwie.sunli20181130.week_test.CustomHotView
         android:id="@+id/hl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.bwie.sunli20181130.weektest.WeekHotLayout>
+        android:layout_height="wrap_content"
+        ></com.bwie.sunli20181130.week_test.CustomHotView>
 
 </LinearLayout>
