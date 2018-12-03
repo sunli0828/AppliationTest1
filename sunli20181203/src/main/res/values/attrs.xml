@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FindView">
+        <attr name="find_text_color" format="color"></attr>
+        <attr name="fing_text_size" format="integer"></attr>
+    </declare-styleable>
+    <declare-styleable name="TitleBarView">
+        <attr name="title_text_color" format="color"></attr>
+        <attr name="title_text_size" format="integer"></attr>
+    </declare-styleable>
+    <declare-styleable name="HistoryView">
+        <attr name="history_text_color" format="color"></attr>
+        <attr name="history_text_size" format="integer"></attr>
+    </declare-styleable>
+</resources>
